@@ -14,7 +14,7 @@ RUN npm install --only=production && \
 # Copy the rest of the application code
 COPY . .
 
-# Build the application
+# Build the application and  remove development dependencies
 RUN npm run build && \
     npm prune --production
 
