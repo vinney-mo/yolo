@@ -29,6 +29,12 @@ COPY --from=build-stage /client/public ./public
 COPY --from=build-stage /client/src ./src
 COPY --from=build-stage /client/package*.json ./
 
+# Set the environment variable for the app
+ENV NODE_ENV=production
+
+# Expose the port used by the app
+EXPOSE 3000
+
 # Prune the node_modules directory to remove development dependencies and clears the npm cache and removes any temporary files
 RUN npm prune --production && \
     npm cache clean --force && \
