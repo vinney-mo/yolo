@@ -36,7 +36,7 @@ services:
     container_name: backend_database
     ports:
       - 27017:27017
-    image: mongo:v1
+    image: mongo:latest
     environment:
       MONGO_INITDB_ROOT_USERNAME: backend
       MONGO_INITDB_ROOT_PASSWORD: backend
